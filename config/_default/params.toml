@@ -1,0 +1,64 @@
+description = "Radiant helps you sell more by revealing sensitive information about your customers."
+
+[announcement]
+text = "Radiant raises $100M Series A from Tailwind Ventures"
+link = "/blog/radiant-raises-100m-series-a-from-tailwind-ventures"
+
+# Homepage Content
+[hero]
+title = "Close every deal."
+description = "Radiant helps you sell more by revealing sensitive information about your customers."
+
+[[hero.buttons]]
+text = "Get started"
+url = "#"
+class = "inline-flex items-center justify-center px-4 py-[calc(--spacing(2)-1px)] rounded-full border border-transparent bg-gray-950 shadow-md text-base font-medium whitespace-nowrap text-white data-disabled:bg-gray-950 data-disabled:opacity-40 data-hover:bg-gray-800"
+
+[[hero.buttons]]
+text = "See pricing"
+url = "/pricing"
+class = "relative inline-flex items-center justify-center px-4 py-[calc(--spacing(2)-1px)] rounded-full border border-transparent bg-white/15 ring-1 shadow-md ring-[#D15052]/15 after:absolute after:inset-0 after:rounded-full after:shadow-[inset_0_0_2px_1px_#ffffff4d] text-base font-medium whitespace-nowrap text-gray-950 data-disabled:bg-white/15 data-disabled:opacity-40 data-hover:bg-white/20"
+
+[[logoCloud]]
+alt = "SavvyCal"
+src = "/logo-cloud/savvycal.svg"
+[[logoCloud]]
+alt = "Laravel"
+src = "/logo-cloud/laravel.svg"
+[[logoCloud]]
+alt = "Tuple"
+src = "/logo-cloud/tuple.svg"
+[[logoCloud]]
+alt = "Transistor"
+src = "/logo-cloud/transistor.svg"
+[[logoCloud]]
+alt = "Statamic"
+src = "/logo-cloud/statamic.svg"
+
+[[features]]
+eyebrow = "Sales"
+title = "Know more about your customers than they do."
+
+[[features.cards]]
+class = "max-lg:rounded-t-4xl lg:col-span-3 lg:rounded-tl-4xl"
+cardEyebrow = "Insight"
+cardTitle = "Get perfect clarity"
+cardDescription = "Radiant uses social engineering to build a detailed financial picture of your leads. Know their budget, compensation package, social security number, and more."
+content = '''
+    <div class="h-80 bg-[url(/screenshots/profile.png)] bg-[size:1000px_560px] bg-[left_-109px_top_-112px] bg-no-repeat"></div>
+    '''
+
+[[features.cards]]
+class = "lg:col-span-3 lg:rounded-tr-4xl"
+cardEyebrow = "Analysis"
+cardTitle = "Undercut your competitors"
+cardDescription = "With our advanced data mining, you'll know which companies your leads are talking to and exactly how much they're being charged."
+content = '''
+    <div class="absolute inset-0 bg-[url(/screenshots/competitors.png)] bg-[size:1100px_650px] bg-[left_-38px_top_-73px] bg-no-repeat"></div>
+    '''
+
+[[features.cards]]
+class = "lg:col-span-2 lg:rounded-bl-4xl"
+cardEyebrow = "Speed"
+cardTitle = "Built for power users"
+cardDescription = "It's never been faster to cold email your entire contact list using our streamlined keyboard shortcuts."
