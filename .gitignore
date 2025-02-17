@@ -1,0 +1,18 @@
+# Generated files by hugo
+/public/
+/resources/_gen/
+/assets/jsconfig.json
+hugo_stats.json
+
+# Temporary lock files
+.hugo_build.lock
+
+# Node modules (if using npm/yarn for themes or tools)
+node_modules/
+
+# IDE specific files
+.idea
+.vscode
+*.swp
+*.swo
+.env
