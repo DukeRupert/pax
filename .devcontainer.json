@@ -1,0 +1,33 @@
+{
+    "name": "Hugo Development Environment",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "lts"
+        },
+        "ghcr.io/devcontainers/features/git:1": {}
+    },
+    "forwardPorts": [1313],
+    "postCreateCommand": "hugo version",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "bungcip.better-toml",
+                "davidanson.vscode-markdownlint",
+                "budparr.language-hugo-vscode",
+                "ms-vscode.live-server",
+                "streetsidesoftware.code-spell-checker"
+            ],
+            "settings": {
+                "editor.formatOnSave": true,
+                "files.autoSave": "onFocusChange",
+                "[markdown]": {
+                    "editor.defaultFormatter": "davidanson.vscode-markdownlint",
+                    "editor.formatOnSave": true
+                }
+            }
+        }
+    }
+}
