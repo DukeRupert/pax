@@ -6,8 +6,8 @@ description = "Radiant helps you sell more by revealing sensitive information ab
 
 # Homepage Content
 [hero]
-title = "Private Home Security"
-description = "Your Home. Your Cameras. Your Data. Period."
+title = "Professional Home Security with Complete Privacy"
+description = "High-end surveillance systems that keep your data on your property, not in the cloud"
 
 [[hero.buttons]]
 text = "Get started"
@@ -56,12 +56,12 @@ icon = """
 
 [footer]
 [footer.cta]
-eyebrow = "Get started"
-title = "Ready to dive in?<br>Start your free trial today."
-description = "Get the cheat codes for selling and unlock your team's revenue potential."
+eyebrow = "Protect Your Privacy"
+title = "Ready to take control of your security?<br>Schedule a free consultation."
+description = "No obligation, no pressure - just straightforward advice about keeping your data truly private."
 
 [footer.cta.button]
-text = "Get started"
+text = "Book Free Consultation"
 url = "#"
 
 [[footer.columns]]

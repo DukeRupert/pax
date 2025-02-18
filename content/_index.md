@@ -5,4 +5,5 @@ draft = false
 +++
 
 {{< privacyComparison >}}
+{{< privacy-comparison >}}
 {{< use-cases >}}
