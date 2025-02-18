@@ -1,1 +1,62 @@
-<p>Copyright {{ now.Year }}. All rights reserved.</p>
+<footer>
+    <div class="relative bg-linear-115 bg-linear-115 from-sky-50 from-28% via-sky-300 via-70% to-emerald-300 sm:bg-linear-145">
+        <div class="absolute inset-2 rounded-4xl bg-white/80"></div>
+        <div class="px-6 lg:px-8">
+            <div class="mx-auto max-w-2xl lg:max-w-7xl">
+                <!-- CTA Section -->
+                <div class="relative pt-20 pb-16 text-center sm:py-24">
+                    <hgroup>
+                        <h2 class="font-mono text-xs/5 font-semibold tracking-widest text-gray-500 uppercase">{{ .Site.Params.footer.cta.eyebrow }}</h2>
+                        <p class="mt-6 text-3xl font-medium tracking-tight text-gray-950 sm:text-5xl">{{ .Site.Params.footer.cta.title | safeHTML }}</p>
+                    </hgroup>
+                    <p class="mx-auto mt-6 max-w-xs text-sm/6 text-gray-500">{{ .Site.Params.footer.cta.description }}</p>
+                    <div class="mt-6">
+                        <a class="w-full sm:w-auto inline-flex items-center justify-center px-4 py-[calc(--spacing(2)-1px)] rounded-full border border-transparent bg-gray-950 shadow-md text-base font-medium whitespace-nowrap text-white data-hover:bg-gray-800" href="{{ .Site.Params.footer.cta.button.url }}">
+                            {{ site.Params.footer.cta.button.text }}
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Footer Links -->
+                <div class="relative pb-16">
+                    <div class="grid grid-cols-2 gap-y-10 lg:grid-cols-6 lg:gap-8">
+                        <div class="col-span-2 flex">
+                            <div class="pt-6 lg:pb-6">
+                                {{ partial "logo.html" . }}
+                            </div>
+                        </div>
+                        <div class="col-span-2 grid grid-cols-2 gap-x-8 gap-y-12 lg:col-span-4 lg:grid-cols-4">
+                            {{ range site.Params.footer.columns }}
+                            <div>
+                                <h3 class="text-sm/6 font-medium text-gray-950/50">{{ .title }}</h3>
+                                <ul class="mt-6 space-y-4 text-sm/6">
+                                    {{ range .links }}
+                                    <li>
+                                        <a href="{{ .url }}" class="font-medium text-gray-950 data-hover:text-gray-950/75">
+                                            {{ .text }}
+                                        </a>
+                                    </li>
+                                    {{ end }}
+                                </ul>
+                            </div>
+                            {{ end }}
+                        </div>
+                    </div>
+
+                    <!-- Footer Bottom -->
+                    <div class="mt-16 flex justify-between border-t border-gray-950/10 pt-8">
+                        <p class="text-sm text-gray-600">© {{ now.Year }} {{ .Site.Title }}. All rights reserved.</p>
+                        <div class="flex space-x-6">
+                            {{ range site.Params.footer.social }}
+                            <a href="{{ .url }}" target="_blank" class="text-gray-950 data-hover:text-gray-950/75">
+                                <span class="sr-only">{{ .name }}</span>
+                                {{ .icon | safeHTML }}
+                            </a>
+                            {{ end }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

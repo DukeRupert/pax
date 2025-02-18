@@ -1,6 +1,7 @@
 <div class="relative">
     <div
-        class="absolute inset-2 bottom-0 rounded-4xl ring-1 ring-black/5 ring-inset bg-linear-115 from-[#fff1be] from-28% via-[#ee87cb] via-70% to-[#b060ff] sm:bg-linear-145">
+        class="absolute inset-2 bottom-0 rounded-4xl ring-1 ring-black/5 ring-inset bg-linear-115 from-sky-50 from-28% via-sky-300 via-70% to-emerald-300
+        dark:from-sky-950 dark:via-sky-800 dark:to-emerald-900 sm:bg-linear-145">
     </div>
     <div class="relative px-6 lg:px-8">
         <div class="mx-auto max-w-2xl lg:max-w-7xl">
@@ -10,7 +11,7 @@
                         class="relative flex justify-between group/row relative isolate pt-[calc(--spacing(2)+1px)] last:pb-[calc(--spacing(2)+1px)]">
                         <div class="relative flex gap-6">
                             <div class="py-3 group/item relative">
-                                <a title="Home" href="/">
+                                <a title="Home" href="/" class="filter dark:invert">
                                     {{ partial "logo.html" . }}
                                 </a>
                             </div>
@@ -32,7 +33,7 @@
                         <nav class="relative hidden lg:flex">
                             {{ range .Site.Menus.main }}
                             <div class="relative flex group/item relative">
-                                <a class="flex items-center px-4 py-3 text-base font-medium text-gray-950 bg-blend-multiply data-hover:bg-black/[2.5%]"
+                                <a class="flex items-center px-4 py-3 text-base font-medium text-gray-950 dark:text-gray-50 bg-blend-multiply data-hover:bg-black/[2.5%]"
                                     href="{{ .URL }}">{{ .Name }}</a>
                             </div>
                             {{ end }}
