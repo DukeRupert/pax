@@ -1,0 +1,132 @@
+{{/* layouts/posts/list.html */}}
+<div class="bg-white py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <!-- Header -->
+    <div class="mx-auto max-w-2xl lg:mx-0">
+      <h1 class="font-mono text-xs tracking-widest text-gray-500 font-medium uppercase">Our Blog</h1>
+      <p class="mt-6 text-3xl font-light tracking-tight text-balance sm:text-4xl text-gray-900">
+        Insights and Updates from <span class="text-sky-600 font-normal">Private Home Security</span>
+      </p>
+      <p class="mt-6 text-base text-gray-600 max-w-xl">
+        Stay informed about the latest developments in home security, privacy technology, and protecting what matters most.
+      </p>
+    </div>
+
+    <!-- Blog Posts Grid -->
+    <div class="mx-auto mt-16 grid max-w-2xl gap-x-8 gap-y-12 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+      {{ range .RegularPages }}
+        <article class="group relative">
+          <!-- Image Container -->
+          <div class="relative w-full aspect-[16/9] overflow-hidden rounded-2xl bg-gray-100 mb-8">
+            {{ with .Params.image }}
+              <img 
+                src="{{ . }}" 
+                alt="{{ $.Title }}" 
+                class="absolute inset-0 h-full w-full object-cover"
+              >
+            {{ else }}
+              <!-- Placeholder gradient if no image -->
+              <div class="absolute inset-0 bg-gradient-to-br from-sky-50 from-28% via-sky-100/70 to-sky-100/40"></div>
+            {{ end }}
+          </div>
+
+          <!-- Meta info -->
+          <div class="flex items-center gap-x-4 text-xs">
+            <time datetime="{{ .Date.Format "2006-01-02" }}" class="text-gray-500">
+              {{ .Date.Format "Jan 02, 2006" }}
+            </time>
+            {{ with .Params.category }}
+              <a 
+                href="/categories/{{ . | urlize }}" 
+                class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
+              >
+                {{ . }}
+              </a>
+            {{ end }}
+          </div>
+
+          <!-- Title and Summary -->
+          <div class="relative mt-4">
+            <h2 class="text-xl font-medium tracking-tight text-gray-900 group-hover:text-sky-600 transition">
+              <a href="{{ .RelPermalink }}">
+                <span class="absolute inset-0"></span>
+                {{ .Title }}
+              </a>
+            </h2>
+            <p class="mt-4 text-base text-gray-600 line-clamp-3">
+              {{ .Summary }}
+            </p>
+          </div>
+
+          <!-- Author info if available -->
+          {{ with .Params.author }}
+            <div class="relative mt-8 flex items-center gap-x-4">
+              {{ with .image }}
+                <img 
+                  src="{{ . }}" 
+                  alt="{{ $.Params.author.name }}" 
+                  class="size-10 rounded-full bg-gray-50"
+                >
+              {{ else }}
+                <div class="size-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-400">
+                  <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                </div>
+              {{ end }}
+              <div class="text-sm/6">
+                <p class="font-medium text-gray-900">{{ .name }}</p>
+                {{ with .title }}
+                  <p class="text-gray-600">{{ . }}</p>
+                {{ end }}
+              </div>
+            </div>
+          {{ end }}
+        </article>
+      {{ end }}
+    </div>
+
+    <!-- Pagination if needed -->
+    {{ $paginator := .Paginate .RegularPages }}
+    {{ if gt $paginator.TotalPages 1 }}
+      <nav class="mt-16 flex items-center justify-between border-t border-gray-100 px-4">
+        <div class="flex w-0 flex-1">
+          {{ if $paginator.HasPrev }}
+            <a
+              href="{{ $paginator.Prev.URL }}"
+              class="inline-flex items-center pt-4 pr-1 text-sm font-medium text-gray-500 hover:text-gray-700"
+            >
+              <svg class="mr-3 h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M18 10a.75.75 0 01-.75.75H4.66l2.1 1.95a.75.75 0 11-1.02 1.1l-3.5-3.25a.75.75 0 010-1.1l3.5-3.25a.75.75 0 111.02 1.1l-2.1 1.95h12.59A.75.75 0 0118 10z" clip-rule="evenodd" />
+              </svg>
+              Previous
+            </a>
+          {{ end }}
+        </div>
+        <div class="hidden md:-mt-px md:flex">
+          {{ range $paginator.Pagers }}
+            <a
+              href="{{ .URL }}"
+              class="inline-flex items-center border-t-2 px-4 pt-4 text-sm font-medium {{ if eq . $paginator }}border-sky-600 text-sky-600{{ else }}border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700{{ end }}"
+            >
+              {{ .PageNumber }}
+            </a>
+          {{ end }}
+        </div>
+        <div class="flex w-0 flex-1 justify-end">
+          {{ if $paginator.HasNext }}
+            <a
+              href="{{ $paginator.Next.URL }}"
+              class="inline-flex items-center pt-4 pl-1 text-sm font-medium text-gray-500 hover:text-gray-700"
+            >
+              Next
+              <svg class="ml-3 h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M2 10a.75.75 0 01.75-.75h12.59l-2.1-1.95a.75.75 0 111.02-1.1l3.5 3.25a.75.75 0 010 1.1l-3.5 3.25a.75.75 0 11-1.02-1.1l2.1-1.95H2.75A.75.75 0 012 10z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          {{ end }}
+        </div>
+      </nav>
+    {{ end }}
+  </div>
+</div>
