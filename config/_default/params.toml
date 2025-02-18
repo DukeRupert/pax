@@ -19,33 +19,40 @@ text = "Learn more"
 url = "/pricing"
 class = "relative inline-flex items-center justify-center px-4 py-[calc(--spacing(2)-1px)] rounded-full border border-transparent bg-white/15 ring-1 shadow-md ring-[#D15052]/15 after:absolute after:inset-0 after:rounded-full after:shadow-[inset_0_0_2px_1px_#ffffff4d] text-base font-medium whitespace-nowrap text-gray-950 dark:text-gray-50 data-disabled:bg-white/15 data-disabled:opacity-40 data-hover:bg-white/20"
 
-[[features]]
-eyebrow = "Sales"
-title = "Know more about your customers than they do."
+[feature_section]
+tag = "Privacy-First Security"
+title = "Security Without Big Tech"
+description = "Keep your home secure while keeping big tech companies out of your personal life. We install professional-grade security systems that store all footage right in your home - never in someone else's cloud."
+image = "/images/security-dashboard.png"
 
-[[features.cards]]
-class = "max-lg:rounded-t-4xl lg:col-span-3 lg:rounded-tl-4xl"
-cardEyebrow = "Insight"
-cardTitle = "Get perfect clarity"
-cardDescription = "Radiant uses social engineering to build a detailed financial picture of your leads. Know their budget, compensation package, social security number, and more."
-content = '''
-    <div class="h-80 bg-[url(/screenshots/profile.png)] bg-[size:1000px_560px] bg-[left_-109px_top_-112px] bg-no-repeat"></div>
-    '''
+[[feature_section.features]]
+title = "Complete Data Privacy."
+description = "Your security footage stays in your home, on your hardware. No cloud storage, no external streaming, no compromises. What happens on your property stays on your property."
+icon = """
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="absolute top-1 left-1 size-5 text-sky-600">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88" />
+</svg>
+"""
 
-[[features.cards]]
-class = "lg:col-span-3 lg:rounded-tr-4xl"
-cardEyebrow = "Analysis"
-cardTitle = "Undercut your competitors"
-cardDescription = "With our advanced data mining, you'll know which companies your leads are talking to and exactly how much they're being charged."
-content = '''
-    <div class="absolute inset-0 bg-[url(/screenshots/competitors.png)] bg-[size:1100px_650px] bg-[left_-38px_top_-73px] bg-no-repeat"></div>
-    '''
+[[feature_section.features]]
+title = "Professional Installation."
+description = "Expert installation of high-quality cameras, sensors, and networking equipment, configured for optimal coverage and reliability. We handle the technical details so you don't have to."
+icon = """
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="absolute top-1 left-1 size-5 text-sky-600">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437 1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008Z" />
+</svg>
 
-[[features.cards]]
-class = "lg:col-span-2 lg:rounded-bl-4xl"
-cardEyebrow = "Speed"
-cardTitle = "Built for power users"
-cardDescription = "It's never been faster to cold email your entire contact list using our streamlined keyboard shortcuts."
+"""
+
+[[feature_section.features]]
+title = "Local Control."
+description = "Your security system runs on a dedicated local network, accessible only through your private infrastructure. You own and control everything - no subscriptions, no cloud dependence, no external oversight."
+icon = """
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="absolute top-1 left-1 size-5 text-sky-600">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+</svg>
+
+"""
 
 [footer]
 [footer.cta]
