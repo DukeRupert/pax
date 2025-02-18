@@ -23,7 +23,7 @@ resources:
 author:
   name: "Author Name"
   title: "Security Expert"
-  image: "/path/to/image.jpg"  # optional
+  image: "/image/author/author.jpg"  # optional
 ---
 
 

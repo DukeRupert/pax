@@ -1,0 +1,70 @@
+<div class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between border-b border-gray-100 pb-6 mb-6">
+    <!-- Left side - Time info -->
+    <footer class="flex items-center gap-6 text-sm text-gray-600">
+        <!-- Published Date -->
+        <div class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="1.5">
+                <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+                <circle cx="18" cy="18" r="4" />
+                <path d="M15 3v4" />
+                <path d="M7 3v4" />
+                <path d="M3 11h16" />
+                <path d="M18 16.496v1.504l1 1" />
+            </svg>
+            <time class="font-medium">{{ .Date.Format "Jan 02, 2006" }}</time>
+        </div>
+
+        <!-- Reading Time -->
+        <div class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="9" />
+                <polyline points="12 7 12 12 15 15" />
+            </svg>
+            <time class="font-medium">
+                {{ $readingTime := div (.WordCount) 200 }}
+                {{ if eq $readingTime 0 }}
+                1 minute read
+                {{ else }}
+                {{ $readingTime }} minute read
+                {{ end }}
+            </time>
+        </div>
+    </footer>
+
+    <!-- Right side - Categories -->
+    {{ with .Params.categories }}
+    <div class="flex flex-wrap gap-2">
+        {{ range . }}
+        <a href="/categories/{{ . | urlize }}" class="rounded-full px-3 py-1 text-sm font-medium 
+                  bg-gray-50 text-gray-600 hover:bg-gray-100 
+                  transition-colors">
+            {{ . }}
+        </a>
+        {{ end }}
+    </div>
+    {{ end }}
+</div>
+
+<!-- Author info if available -->
+{{ with .Params.author }}
+<div class="flex items-center gap-4 border-b border-gray-100 pb-6 mb-6">
+    {{ with .image }}
+    <img src="{{ . }}" alt="{{ $.Params.author.name }}" class="w-12 h-12 rounded-full object-cover">
+    {{ else }}
+    <div class="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center text-gray-400">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+        </svg>
+    </div>
+    {{ end }}
+    <div>
+        <div class="font-medium text-gray-900">{{ .name }}</div>
+        {{ with .title }}
+        <div class="text-sm text-gray-600">{{ . }}</div>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

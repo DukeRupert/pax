@@ -1,0 +1,30 @@
+<footer class="flex items-center gap-6 text-sm text-gray-600">
+    <!-- Published Date -->
+    <div class="flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+            <circle cx="18" cy="18" r="4" />
+            <path d="M15 3v4" />
+            <path d="M7 3v4" />
+            <path d="M3 11h16" />
+            <path d="M18 16.496v1.504l1 1" />
+        </svg>
+        <time class="font-medium">{{ .Date.Format "Jan 02, 2006" }}</time>
+    </div>
+
+    <!-- Reading Time -->
+    <div class="flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="9" />
+            <polyline points="12 7 12 12 15 15" />
+        </svg>
+        <time class="font-medium">
+            {{ $readingTime := div (.WordCount) 200 }}
+            {{ if eq $readingTime 0 }}
+                1 minute read
+            {{ else }}
+                {{ $readingTime }} minute read
+            {{ end }}
+        </time>
+    </div>
+</footer>
