@@ -1,0 +1,41 @@
+{{/* layouts/partials/faq.html */}}
+{{ with .Site.Params.faq }}
+<div id="faq" class="bg-white">
+    <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
+        <div class="mx-auto max-w-4xl">
+            <h2 class="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+                {{ .title }}
+            </h2>
+            <dl class="mt-16 space-y-4">
+                {{ range .items }}
+                <div class="relative">
+                    <details class="group">
+                        <summary class="list-none">
+                            <div
+                                class="flex w-full cursor-pointer items-center justify-between rounded-lg bg-white px-4 py-4 text-left text-gray-900 ring-1 ring-gray-200 hover:ring-gray-300">
+                                <span class="text-base font-semibold">{{ .question }}</span>
+                                <span class="ml-6 flex h-7 items-center">
+                                    <!-- Plus icon -->
+                                    <svg class="size-6 group-open:hidden" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
+                                    </svg>
+                                    <!-- Minus icon -->
+                                    <svg class="size-6 hidden group-open:block" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </summary>
+                        <div class="mt-2 px-4 pb-4">
+                            <p class="text-base text-gray-600">{{ .answer | safeHTML }}</p>
+                        </div>
+                    </details>
+                </div>
+                {{ end }}
+            </dl>
+        </div>
+    </div>
+</div>
+{{ end }}

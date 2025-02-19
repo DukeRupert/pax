@@ -19,40 +19,36 @@ text = "Learn more"
 url = "/pricing"
 class = "relative inline-flex items-center justify-center px-4 py-[calc(--spacing(2)-1px)] rounded-full border border-transparent bg-white/15 ring-1 shadow-md ring-[#D15052]/15 after:absolute after:inset-0 after:rounded-full after:shadow-[inset_0_0_2px_1px_#ffffff4d] text-base font-medium whitespace-nowrap text-gray-950 dark:text-gray-50 data-disabled:bg-white/15 data-disabled:opacity-40 data-hover:bg-white/20"
 
-[feature_section]
-tag = "Privacy-First Security"
-title = "Security Without Big Tech"
-description = "Keep your home secure while keeping big tech companies out of your personal life. We install professional-grade security systems that store all footage right in your home - never in someone else's cloud."
-image = "/images/security-dashboard.png"
+[faq]
+title = "Frequently Asked Questions"
 
-[[feature_section.features]]
-title = "Complete Data Privacy."
-description = "Your security footage stays in your home, on your hardware. No cloud storage, no external streaming, no compromises. What happens on your property stays on your property."
-icon = """
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="absolute top-1 left-1 size-5 text-sky-600">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88" />
-</svg>
-"""
+[[faq.items]]
+question = "Why are your systems more expensive upfront than traditional security companies?"
+answer = "Unlike traditional companies that charge lower upfront costs but lock you into expensive long-term contracts, our systems are owned by you outright. This means no monthly fees, no contracts, and complete control over your security system. Learn more in our article: <a href='/posts/traditional-security-company-drawbacks' class='text-sky-600'>Why Traditional Security Companies May Not Be Your Best Option</a>"
 
-[[feature_section.features]]
-title = "Professional Installation."
-description = "Expert installation of high-quality cameras, sensors, and networking equipment, configured for optimal coverage and reliability. We handle the technical details so you don't have to."
-icon = """
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="absolute top-1 left-1 size-5 text-sky-600">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437 1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008Z" />
-</svg>
+[[faq.items]]
+question = "How do I access my security cameras when I'm away from home?"
+answer = "We set up a secure, self-hosted VPN that allows you to access your cameras as if you were at home - without relying on third-party services or exposing your footage to outside servers. Read more about our approach in <a href='/posts/secure-home-vpn-access' class='text-sky-600'>Understanding VPNs: Your Private Path Home</a>"
 
-"""
+[[faq.items]]
+question = "Why do you put security cameras on a separate network?"
+answer = "Isolating cameras on their own network segment is a crucial security measure that protects your home network from potential vulnerabilities. This means even if a camera was compromised, it couldn't access your personal devices. Find out more in our article: <a href='/posts/network-security-home-surveillance-systems' class='text-sky-600'>Why Network Security Matters for Your Home Surveillance System</a>"
 
-[[feature_section.features]]
-title = "Local Control."
-description = "Your security system runs on a dedicated local network, accessible only through your private infrastructure. You own and control everything - no subscriptions, no cloud dependence, no external oversight."
-icon = """
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="absolute top-1 left-1 size-5 text-sky-600">
-  <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
-</svg>
+[[faq.items]]
+question = "Do I need to trust the camera manufacturer?"
+answer = "No - our network security setup means you don't have to trust the camera manufacturer. By isolating cameras and blocking their internet access, we prevent them from sending any data to outside servers, regardless of what the manufacturer might attempt."
 
-"""
+[[faq.items]]
+question = "What happens if my internet goes down?"
+answer = "Your security system continues to function normally, recording to your local NVR (Network Video Recorder). You'll only lose remote access until your internet is restored. This is another advantage of our self-contained system approach."
+
+[[faq.items]]
+question = "How long do you maintain support for installed systems?"
+answer = "We provide ongoing support for all installed systems, including security updates and troubleshooting. Since you own the equipment outright, there are no contract limitations on support duration. We charge only for parts and labor when needed."
+
+[[faq.items]]
+question = "Can I integrate this system with my smart home devices?"
+answer = "Yes, but we implement it securely. We can integrate your security system with authorized smart home devices while maintaining proper network segregation to ensure security. We'll work with you to balance convenience and security based on your needs."
 
 [footer]
 [footer.cta]
