@@ -1,5 +1,6 @@
 ---
 title: "Why Network Security Matters for Your Home Surveillance System"
+description: "A security camera is only as secure as the network it's connected to. While most people focus on camera features and placement, the underlying network infrastructure plays a critical role in protecting your privacy. Here's why proper network security matters and how we ensure your system stays protected."
 date: 2024-02-18
 slug: "network-security-home-surveillance-systems"
 category: "Network Security"
@@ -13,10 +14,6 @@ author:
   title: "Security Expert"
   image: "/image/author/author.jpg"
 ---
-
-# Why Network Security Matters for Your Home Surveillance System
-
-When installing a home surveillance system, the cameras themselves are only part of the equation. How these cameras connect to your network is equally important for maintaining your privacy and security. Let's explore why proper network security is crucial and how we ensure your system stays protected.
 
 ## Understanding the Risks
 

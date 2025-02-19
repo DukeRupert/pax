@@ -1,0 +1,17 @@
+{{ define "main" }}
+<div class="bg-white py-24 sm:py-32">
+  <article class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl lg:mx-0">
+      {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+      {{ $dateHuman := .Date | time.Format ":date_long" }}
+      <time datetime="{{ $dateMachine }}" class="text-base/7 font-semibold text-indigo-600">{{ $dateHuman }}</time>
+      <h1 class="mt-2 text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">{{ .Title}}</h1>
+      <p class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">{{ .Description }}</p>
+    </div>
+    <div class="mt-2 prose lg:prose-xl">
+      {{ .Content }}
+    </div>
+    {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+  </article>
+</div>
+{{ end }}

@@ -1,7 +1,7 @@
 {{ define "main" }}
 <div class="bg-white px-6 py-32 lg:px-8">
   <div class="mx-auto max-w-3xl text-base/7 text-gray-700">
-
+    <p> I am /_default/single.html</p>
     {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
     {{ $dateHuman := .Date | time.Format ":date_long" }}
     <time datetime="{{ $dateMachine }}" class="text-base/7 font-semibold text-indigo-600">{{ $dateHuman }}</time>
