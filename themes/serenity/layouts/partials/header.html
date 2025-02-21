@@ -1,19 +1,20 @@
-<div class="relative">
+<div class="relative" x-data="{ mobileMenuIsOpen: false }" x-on:click.away="mobileMenuIsOpen = false">
     <div
-        class="absolute inset-2 bottom-0 rounded-4xl ring-1 ring-black/5 ring-inset bg-linear-115 from-sky-50 from-28% via-sky-300 via-70% to-emerald-300
-        dark:from-sky-950 dark:via-sky-800 dark:to-emerald-900 sm:bg-linear-145">
+        class="absolute inset-2 bottom-0 rounded-4xl ring-1 ring-black/5 ring-inset bg-gradient-to-br from-sky-50 from-28% via-sky-300 via-70% to-emerald-300 dark:from-sky-950 dark:via-sky-800 dark:to-emerald-900 sm:bg-[linear-gradient(145deg,theme(colors.sky.50)_28%,theme(colors.sky.300)_70%,theme(colors.emerald.300)_100%)]">
     </div>
     <div class="relative px-6 lg:px-8">
         <div class="mx-auto max-w-2xl lg:max-w-7xl">
             <header class="pt-12 sm:pt-16">
                 <div class="">
                     <div
-                        class="relative flex justify-between group/row relative isolate pt-[calc(--spacing(2)+1px)] last:pb-[calc(--spacing(2)+1px)]">
+                        class="relative flex justify-between group/row relative isolate pt-[calc(theme(spacing.2)+1px)] last:pb-[calc(theme(spacing.2)+1px)]">
                         <div class="relative flex gap-6">
                             <div class="py-3 group/item relative">
-                                <a title="Home" href="/" class="filter dark:invert">
-                                    {{ partial "logo.html" . }}
-                                </a>
+                                <div class="py-3 group/item relative">
+                                    <a title="Home" href="/" class="filter dark:invert">
+                                        {{ partial "logo.html" . }}
+                                    </a>
+                                </div>
                             </div>
                             <div class="relative hidden items-center py-3 lg:flex">
                                 {{ with .Site.Params.announcement }}
@@ -38,11 +39,16 @@
                             </div>
                             {{ end }}
                         </nav>
-                        <button
-                            class="flex size-12 items-center justify-center self-center rounded-lg data-hover:bg-black/5 lg:hidden"
+
+                        <!-- Mobile Menu Button -->
+                        <button x-on:click="mobileMenuIsOpen = !mobileMenuIsOpen"
+                            x-bind:aria-expanded="mobileMenuIsOpen"
+                            x-bind:class="mobileMenuIsOpen ? 'fixed top-6 right-6 z-20' : ''"
+                            class="flex size-12 items-center justify-center self-center rounded-lg hover:bg-black/5 lg:hidden"
                             aria-label="Open main menu" type="button">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                                aria-hidden="true" data-slot="icon" class="size-6">
+                            <svg x-cloak x-show="!mobileMenuIsOpen" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-slot="icon"
+                                class="size-6">
                                 <path fill-rule="evenodd"
                                     d="M3 9a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 9Zm0 6.75a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z"
                                     clip-rule="evenodd" />
@@ -51,6 +57,20 @@
                     </div>
                 </div>
             </header>
+        </div>
+        <!-- Mobile Menu -->
+        <div x-cloak x-show="mobileMenuIsOpen" x-on:click="mobileMenuIsOpen = !mobileMenuIsOpen"
+            x-transition:enter="transition motion-reduce:transition-none ease-out duration-300"
+            x-transition:enter-start="-translate-y-full" x-transition:enter-end="translate-y-0"
+            x-transition:leave="transition motion-reduce:transition-none ease-out duration-300"
+            x-transition:leave-start="translate-y-0" x-transition:leave-end="-translate-y-full"
+            class="fixed max-h-svh overflow-y-auto inset-x-0 top-0 z-10 flex flex-col divide-y divide-gray-200 bg-white/95 backdrop-blur-sm px-6 pb-6 pt-20 dark:divide-gray-700 dark:bg-gray-900/95 lg:hidden">
+            {{ range .Site.Menus.main }}
+            <a href="{{ .URL }}"
+                class="py-4 text-lg font-medium text-gray-900 hover:text-gray-600 dark:text-gray-100 dark:hover:text-gray-300">{{
+                .Name }}
+            </a>
+            {{ end }}
         </div>
     </div>
 </div>

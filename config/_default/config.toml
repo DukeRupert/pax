@@ -9,16 +9,16 @@ name = "Pricing"
 url = "/pricing"
 weight = 1
 [[menu.main]]
-name = "Company"
+name = "Posts"
 url = "/company"
 weight = 2
 [[menu.main]]
-name = "Blog"
-url = "/blog"
+name = "Posts"
+url = "/posts"
 weight = 3
 [[menu.main]]
-name = "Login"
-url = "/login"
+name = "Contact"
+url = "/contact"
 weight = 4
 
 [build]
