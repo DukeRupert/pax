@@ -50,6 +50,140 @@ answer = "We provide ongoing support for all installed systems, including securi
 question = "Can I integrate this system with my smart home devices?"
 answer = "Yes, but we implement it securely. We can integrate your security system with authorized smart home devices while maintaining proper network segregation to ensure security. We'll work with you to balance convenience and security based on your needs."
 
+[pricing]
+
+[[pricing.packages]]
+name = "Essential Pro Package"
+price = 2699
+description = "Complete 4-Camera Security Solution"
+highlights = [
+    "4 Professional 5MP AI-Enabled Cameras",
+    "Color Night Vision Technology (49ft Range)",
+    "Intelligent Human & Vehicle Detection",
+    "Professional Grade Network Infrastructure",
+    "Complete Professional Installation"
+]
+
+[[pricing.packages.storage_options]]
+days = 14
+additional_cost = 0
+
+[[pricing.packages.storage_options]]
+days = 30
+additional_cost = 200
+
+[[pricing.packages.storage_options]]
+days = 45
+additional_cost = 400
+
+[[pricing.packages]]
+name = "Advanced Pro Package"
+price = 3799
+description = "Premium 8-Camera Security Solution"
+highlights = [
+    "8 Professional 5MP AI-Enabled Cameras",
+    "Advanced Motion Analytics",
+    "Multi-Site Viewing Capability",
+    "Enterprise-Grade Network Setup",
+    "Professional Installation & Training",
+    "2-Year Warranty Included"
+]
+
+[[pricing.packages.storage_options]]
+days = 14
+additional_cost = 0
+
+[[pricing.packages.storage_options]]
+days = 30
+additional_cost = 300
+
+[[pricing.packages.storage_options]]
+days = 45
+additional_cost = 500
+
+[[pricing.packages]]
+name = "Enterprise Pro Package"
+price = 5299
+description = "Ultimate 12-Camera Security Solution"
+highlights = [
+    "12 Professional 5MP AI-Enabled Cameras",
+    "Advanced AI Analytics Package",
+    "Multi-User Access Control",
+    "Priority Support Response",
+    "Full Team Training",
+    "3-Year Warranty Included"
+]
+
+[[pricing.packages.storage_options]]
+days = 14
+additional_cost = 0
+
+[[pricing.packages.storage_options]]
+days = 30
+additional_cost = 400
+
+[[pricing.packages.storage_options]]
+days = 45
+additional_cost = 600
+
+[[pricing.enhancements]]
+name = "Annual Maintenance Plan"
+price = 299
+period = "year"
+features = [
+    "Quarterly System Checks",
+    "Software Updates",
+    "Camera Cleaning",
+    "Priority Support Access"
+]
+
+[[pricing.enhancements]]
+name = "Advanced AI Configuration"
+price = 199
+features = [
+    "Custom Detection Zones",
+    "Specialized Alert Rules",
+    "Analytics Optimization"
+]
+
+[[pricing.enhancements]]
+name = "Extended Warranty Options"
+features = [
+    "Additional 1 Year: 10% of package price",
+    "Additional 2 Years: 15% of package price",
+    "Additional 3 Years: 20% of package price"
+]
+
+[[pricing.benefits]]
+title = "Professional Grade Equipment"
+description = "Enterprise-quality cameras and equipment designed for 24/7 operation"
+
+[[pricing.benefits]]
+title = "Advanced AI Technology"
+description = "Intelligent detection reduces false alerts while ensuring you never miss important events"
+
+[[pricing.benefits]]
+title = "Redundant Storage"
+description = "All systems include RAID 1 storage configuration for data protection"
+
+[[pricing.benefits]]
+title = "Expert Installation"
+description = "Professional installation and configuration by certified technicians"
+
+[[pricing.benefits]]
+title = "Comprehensive Support"
+description = "Dedicated support team and optional maintenance plans"
+
+[[pricing.benefits]]
+title = "Futureproof Design"
+description = "Expandable systems that grow with your needs"
+
+[testimonial]
+name = "Chante Williams"
+title = "Foster Mom"
+testimony = "As a foster mom, security cameras inside and outside our home are essential – but privacy is non-negotiable. Now all our security footage stays on our property, and I can check on the kids anytime. It's perfect: complete peace of mind without compromising our family's privacy."
+image = ""
+
 [footer]
 [footer.cta]
 eyebrow = "Protect Your Privacy"

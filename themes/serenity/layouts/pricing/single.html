@@ -1,0 +1,39 @@
+{{ define "main" }}
+<div class="mx-auto py-12">
+    <!-- Hero Section -->
+    <div class="text-center mb-16">
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">Professional Security Camera Solutions</h1>
+        <p class="text-xl text-gray-600">Advanced AI-Powered Protection for Your Property</p>
+    </div>
+
+    <div class="relative py-24 mb-16">
+        <!-- Gradient background -->
+        <div
+            class="absolute inset-x-2 top-48 bottom-0 rounded-4xl ring-1 ring-black/5 ring-inset bg-linear-115 from-sky-100 from-28% via-sky-500 via-70% to-emerald-400 sm:bg-linear-145">
+        </div>
+        <!-- Pricing Cards Grid -->
+        <div class="relative px-6 lg:px-8">
+            <div class="mx-auto max-w-2xl lg:max-w-7xl">
+                <div class="grid md:grid-cols-3 gap-8 mb-16">
+                    {{ range .Site.Params.pricing.packages }}
+                    {{ partial "pricing-card.html" . }}
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional Enhancements -->
+    <div class="relative py-24 mb-16">
+        <h2 class="text-2xl font-bold text-center mb-8">Optional Enhancements</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            {{ range .Site.Params.pricing.enhancements }}
+            {{ partial "enhancement-card.html" . }}
+            {{ end }}
+        </div>
+    </div>
+
+    <!-- Why Choose Us -->
+    {{ partial "testimonial.html" . }}
+</div>
+{{ end }}

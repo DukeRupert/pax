@@ -1,0 +1,19 @@
+{{ define "partials/enhancement-card.html" }}
+<div class="bg-white rounded-lg shadow-md p-6 border border-gray-200">
+    <h3 class="text-xl font-bold mb-4">{{ .name }}</h3>
+    {{ if .price }}
+    <div class="text-2xl font-bold mb-4">${{ .price }}{{ if .period }}/{{ .period }}{{ end }}</div>
+    {{ end }}
+    
+    <ul class="space-y-3 mb-6">
+        {{ range .features }}
+        <li class="flex items-start">
+            <svg class="h-6 w-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span>{{ . }}</span>
+        </li>
+        {{ end }}
+    </ul>
+</div>
+{{ end }}

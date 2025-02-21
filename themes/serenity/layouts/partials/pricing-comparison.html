@@ -1,0 +1,391 @@
+{{ define "partials/pricing-comparison.html" }}
+<div class="py-24 px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl lg:max-w-7xl">
+        <table class="w-full text-left">
+            <caption class="sr-only">Security System Comparison</caption>
+            <colgroup>
+                <col class="w-3/5 sm:w-2/5">
+                <col class="w-2/5 data-selected:table-column max-sm:hidden sm:w-1/5">
+                <col class="w-2/5 data-selected:table-column max-sm:hidden sm:w-1/5">
+                <col class="w-2/5 data-selected:table-column max-sm:hidden sm:w-1/5">
+            </colgroup>
+
+            <!-- Table Header -->
+            <thead>
+                <tr class="max-sm:hidden">
+                    <td class="p-0"></td>
+                    {{ range .Site.Params.pricing.packages }}
+                    <th scope="col" class="p-0 data-selected:table-cell max-sm:hidden">
+                        <div class="font-mono text-xs/5 font-semibold tracking-widest text-gray-500 uppercase">
+                            {{ .name }}
+                        </div>
+                    </th>
+                    {{ end }}
+                </tr>
+                <tr class="max-sm:hidden">
+                    <th class="p-0" scope="row">
+                        <span class="sr-only">Get started</span>
+                    </th>
+                    {{ range .Site.Params.pricing.packages }}
+                    <td class="px-0 pt-4 pb-0 data-selected:table-cell max-sm:hidden">
+                        <a href="/contact"
+                            class="inline-flex items-center justify-center px-2 py-[calc(--spacing(1.5)-1px)] rounded-lg border border-transparent ring-1 shadow-sm ring-black/10 text-sm font-medium whitespace-nowrap text-gray-950 data-hover:bg-gray-50">
+                            Get started
+                        </a>
+                    </td>
+                    {{ end }}
+                </tr>
+            </thead>
+
+            <!-- Mobile Header (Dropdown) -->
+            <tr class="sm:hidden">
+                <td class="p-0">
+                    <div class="relative inline-block">
+                        <button class="flex items-center justify-between gap-2 font-medium" type="button"
+                            aria-haspopup="menu" aria-expanded="false">
+                            Essential Pro Package
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                class="size-4 fill-slate-900">
+                                <path fill-rule="evenodd"
+                                    d="M5.22 10.22a.75.75 0 0 1 1.06 0L8 11.94l1.72-1.72a.75.75 0 1 1 1.06 1.06l-2.25 2.25a.75.75 0 0 1-1.06 0l-2.25-2.25a.75.75 0 0 1 0-1.06Z" />
+                            </svg>
+                        </button>
+                    </div>
+                </td>
+                <td colspan="3" class="p-0 text-right">
+                    <a href="/contact"
+                        class="inline-flex items-center justify-center px-2 py-[calc(--spacing(1.5)-1px)] rounded-lg border border-transparent ring-1 shadow-sm ring-black/10 text-sm font-medium whitespace-nowrap text-gray-950 data-hover:bg-gray-50">
+                        Get started
+                    </a>
+                </td>
+            </tr>
+
+            <!-- Camera System -->
+            <tbody class="group">
+                <tr>
+                    <th scope="colgroup" colspan="4" class="px-0 pt-10 pb-0 group-first-of-type:pt-5">
+                        <div class="-mx-4 rounded-lg bg-gray-50 px-4 py-3 text-sm/6 font-semibold">
+                            Camera System
+                        </div>
+                    </th>
+                </tr>
+                <tr class="border-b border-gray-100">
+                    <th scope="row" class="px-0 py-4 text-sm/6 font-normal text-gray-600">Number of Cameras</th>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <div class="text-sm/6">4 Cameras</div>
+                    </td>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <div class="text-sm/6">8 Cameras</div>
+                    </td>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <div class="text-sm/6">12 Cameras</div>
+                    </td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                    <th scope="row" class="px-0 py-4 text-sm/6 font-normal text-gray-600">Camera Quality</th>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <div class="text-sm/6">5MP AI-Enabled</div>
+                    </td>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <div class="text-sm/6">5MP AI-Enabled</div>
+                    </td>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <div class="text-sm/6">5MP AI-Enabled</div>
+                    </td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                    <th scope="row" class="px-0 py-4 text-sm/6 font-normal text-gray-600">Night Vision</th>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <div class="text-sm/6">49ft Range</div>
+                    </td>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <div class="text-sm/6">49ft Range</div>
+                    </td>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <div class="text-sm/6">49ft Range</div>
+                    </td>
+                </tr>
+            </tbody>
+
+            <!-- Storage Options -->
+            <tbody class="group">
+                <tr>
+                    <th scope="colgroup" colspan="4" class="px-0 pt-10 pb-0">
+                        <div class="-mx-4 rounded-lg bg-gray-50 px-4 py-3 text-sm/6 font-semibold">
+                            Storage Options
+                        </div>
+                    </th>
+                </tr>
+                <tr class="border-b border-gray-100">
+                    <th scope="row" class="px-0 py-4 text-sm/6 font-normal text-gray-600">Base Storage</th>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <div class="text-sm/6">14 Days</div>
+                    </td>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <div class="text-sm/6">14 Days</div>
+                    </td>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <div class="text-sm/6">14 Days</div>
+                    </td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                    <th scope="row" class="px-0 py-4 text-sm/6 font-normal text-gray-600">RAID 1 Storage</th>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                            class="size-4 fill-green-600">
+                            <path fill-rule="evenodd"
+                                d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" />
+                        </svg>
+                    </td>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                            class="size-4 fill-green-600">
+                            <path fill-rule="evenodd"
+                                d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" />
+                        </svg>
+                    </td>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                            class="size-4 fill-green-600">
+                            <path fill-rule="evenodd"
+                                d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" />
+                        </svg>
+                    </td>
+                </tr>
+            </tbody>
+
+            <!-- AI Features -->
+            <!-- AI Features -->
+            <tbody class="group">
+                <tr>
+                    <th scope="colgroup" colspan="4" class="px-0 pt-10 pb-0">
+                        <div class="-mx-4 rounded-lg bg-gray-50 px-4 py-3 text-sm/6 font-semibold">
+                            AI Features
+                        </div>
+                    </th>
+                </tr>
+                <tr class="border-b border-gray-100">
+                    <th scope="row" class="px-0 py-4 text-sm/6 font-normal text-gray-600">Motion Detection</th>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                            class="size-4 fill-green-600">
+                            <path fill-rule="evenodd"
+                                d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" />
+                        </svg>
+                    </td>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                            class="size-4 fill-green-600">
+                            <path fill-rule="evenodd"
+                                d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" />
+                        </svg>
+                    </td>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                            class="size-4 fill-green-600">
+                            <path fill-rule="evenodd"
+                                d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" />
+                        </svg>
+                    </td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                    <th scope="row" class="px-0 py-4 text-sm/6 font-normal text-gray-600">Human & Vehicle Detection</th>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                            class="size-4 fill-green-600">
+                            <path fill-rule="evenodd"
+                                d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" />
+                        </svg>
+                    </td>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                            class="size-4 fill-green-600">
+                            <path fill-rule="evenodd"
+                                d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" />
+                        </svg>
+                    </td>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                            class="size-4 fill-green-600">
+                            <path fill-rule="evenodd"
+                                d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" />
+                        </svg>
+                    </td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                    <th scope="row" class="px-0 py-4 text-sm/6 font-normal text-gray-600">Advanced Analytics</th>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                            class="size-4 fill-gray-400">
+                            <path d="M3.75 7.25a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5Z" />
+                        </svg>
+                    </td>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                            class="size-4 fill-green-600">
+                            <path fill-rule="evenodd"
+                                d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" />
+                        </svg>
+                    </td>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                            class="size-4 fill-green-600">
+                            <path fill-rule="evenodd"
+                                d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" />
+                        </svg>
+                    </td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                    <th scope="row" class="px-0 py-4 text-sm/6 font-normal text-gray-600">Multi-Site Viewing</th>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                            class="size-4 fill-gray-400">
+                            <path d="M3.75 7.25a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5Z" />
+                        </svg>
+                    </td>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                            class="size-4 fill-green-600">
+                            <path fill-rule="evenodd"
+                                d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" />
+                        </svg>
+                    </td>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                            class="size-4 fill-green-600">
+                            <path fill-rule="evenodd"
+                                d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" />
+                        </svg>
+                    </td>
+                </tr>
+            </tbody>
+            <!-- Network & Access -->
+            <tbody class="group">
+                <tr>
+                    <th scope="colgroup" colspan="4" class="px-0 pt-10 pb-0">
+                        <div class="-mx-4 rounded-lg bg-gray-50 px-4 py-3 text-sm/6 font-semibold">
+                            Network & Access
+                        </div>
+                    </th>
+                </tr>
+                <tr class="border-b border-gray-100">
+                    <th scope="row" class="px-0 py-4 text-sm/6 font-normal text-gray-600">Remote Viewing</th>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                            class="size-4 fill-green-600">
+                            <path fill-rule="evenodd"
+                                d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" />
+                        </svg>
+                    </td>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                            class="size-4 fill-green-600">
+                            <path fill-rule="evenodd"
+                                d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" />
+                        </svg>
+                    </td>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                            class="size-4 fill-green-600">
+                            <path fill-rule="evenodd"
+                                d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" />
+                        </svg>
+                    </td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                    <th scope="row" class="px-0 py-4 text-sm/6 font-normal text-gray-600">Multi-User Access</th>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                            class="size-4 fill-gray-400">
+                            <path d="M3.75 7.25a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5Z" />
+                        </svg>
+                    </td>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                            class="size-4 fill-green-600">
+                            <path fill-rule="evenodd"
+                                d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" />
+                        </svg>
+                    </td>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                            class="size-4 fill-green-600">
+                            <path fill-rule="evenodd"
+                                d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" />
+                        </svg>
+                    </td>
+                </tr>
+            </tbody>
+
+            <!-- Support & Warranty -->
+            <tbody class="group">
+                <tr>
+                    <th scope="colgroup" colspan="4" class="px-0 pt-10 pb-0">
+                        <div class="-mx-4 rounded-lg bg-gray-50 px-4 py-3 text-sm/6 font-semibold">
+                            Support & Warranty
+                        </div>
+                    </th>
+                </tr>
+                <tr class="border-b border-gray-100">
+                    <th scope="row" class="px-0 py-4 text-sm/6 font-normal text-gray-600">Included Warranty</th>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <div class="text-sm/6">1 Year</div>
+                    </td>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <div class="text-sm/6">2 Years</div>
+                    </td>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <div class="text-sm/6">3 Years</div>
+                    </td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                    <th scope="row" class="px-0 py-4 text-sm/6 font-normal text-gray-600">Professional Installation</th>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                            class="size-4 fill-green-600">
+                            <path fill-rule="evenodd"
+                                d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" />
+                        </svg>
+                    </td>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                            class="size-4 fill-green-600">
+                            <path fill-rule="evenodd"
+                                d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" />
+                        </svg>
+                    </td>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                            class="size-4 fill-green-600">
+                            <path fill-rule="evenodd"
+                                d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" />
+                        </svg>
+                    </td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                    <th scope="row" class="px-0 py-4 text-sm/6 font-normal text-gray-600">Priority Support</th>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                            class="size-4 fill-gray-400">
+                            <path d="M3.75 7.25a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5Z" />
+                        </svg>
+                    </td>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                            class="size-4 fill-gray-400">
+                            <path d="M3.75 7.25a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5Z" />
+                        </svg>
+                    </td>
+                    <td class="p-4 data-selected:table-cell max-sm:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                            class="size-4 fill-green-600">
+                            <path fill-rule="evenodd"
+                                d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" />
+                        </svg>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{{ end }}
