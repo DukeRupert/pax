@@ -1,9 +1,10 @@
 {{ define "main" }}
-<div class="mx-auto py-12">
+<div class="pb-24 lg:pb-32">
     <!-- Header Section -->
     <div class="mt-16 px-6 lg:px-8">
         <div class="mx-auto max-w-2xl lg:max-w-7xl">
-            <h1 class="text-4xl font-medium tracking-tighter text-pretty text-gray-950 data-dark:text-white sm:text-6xl">
+            <h1
+                class="text-4xl font-medium tracking-tighter text-pretty text-gray-950 data-dark:text-white sm:text-6xl">
                 Simple, Transparent Pricing
             </h1>
             <p class="mt-6 max-w-3xl text-2xl font-medium text-gray-500">
@@ -30,12 +31,14 @@
     </div>
 
     <!-- Optional Enhancements -->
-    <div class="relative py-24 mb-16">
-        <h2 class="text-2xl font-bold text-center mb-8">Optional Enhancements</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-            {{ range .Site.Params.pricing.enhancements }}
-            {{ partial "enhancement-card.html" . }}
-            {{ end }}
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="relative py-24 mb-16">
+            <h2 class="text-2xl font-bold text-center mb-8">Optional Enhancements</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                {{ range .Site.Params.pricing.enhancements }}
+                {{ partial "enhancement-card.html" . }}
+                {{ end }}
+            </div>
         </div>
     </div>
 
