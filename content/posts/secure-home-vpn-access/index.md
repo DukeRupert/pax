@@ -4,16 +4,16 @@ description: "Secure remote access is essential for any modern security system. 
 date: 2024-02-18
 slug: "secure-home-vpn-access"
 category: "Network Security"
-resources:
-  - src: "featured.jpg"
-    title: "Featured Image"
-    params:
-      alt: "Secure network connection illustration"
+image: "vpn_letter_tiles.jpeg"
 author:
   name: "Author Name"
   title: "Security Expert"
   image: "/image/author/author.jpg"
 ---
+
+# Understanding VPNs: Your Private Path Home 
+
+Secure remote access is essential for any modern security system. You've probably heard about VPNs (Virtual Private Networks), but their role is often misunderstood. Let's clear up what VPNs actually do and why hosting your own matters.
 
 ## What is a VPN, Really?
 
