@@ -4,11 +4,7 @@ description: "The allure of low monthly fees and professional monitoring draws m
 date: 2024-02-18
 slug: "traditional-security-company-drawbacks"
 category: "Privacy"
-resources:
-  - src: "featured.jpg"
-    title: "Featured Image"
-    params:
-      alt: "Home security system with camera and network equipment"
+image: "bryce-canyon.jpg"
 author:
   name: "Author Name"
   title: "Security Expert"

@@ -4,11 +4,7 @@ description: "A security camera is only as secure as the network it's connected 
 date: 2024-02-18
 slug: "network-security-home-surveillance-systems"
 category: "Network Security"
-resources:
-  - src: "featured.jpg"
-    title: "Featured Image"
-    params:
-      alt: "Secure network setup with router and security cameras"
+image: "featured.jpg"
 author:
   name: "Author Name"
   title: "Security Expert"
